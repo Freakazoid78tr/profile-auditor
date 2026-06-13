@@ -31,6 +31,21 @@ volcanic-profile-auditor chat
 hermes -p volcanic-profile-auditor chat -q "Audit https://github.com/deeploaf/hermes-research-agent"
 ```
 
+## Example tasks
+
+- "Audit this Hermes profile before I install it: https://github.com/deeploaf/hermes-research-agent"
+- "Tell me what this profile can do and whether it has risky scripts or cron jobs."
+- "Compare these two Hermes profiles and recommend which one to install isolated."
+- "Check this profile repo for secrets, private state, broad toolsets, MCP config, and side effects."
+
+## Toolset rationale
+
+This profile requests only the toolsets needed for read-only repository inspection: web access for public pages, terminal/file/code execution for cloning into scratch space and running local scanners, and skills for its bundled audit workflow. It does not request `all`, cron, messaging, wallet, or admin toolsets.
+
+## Branding/provenance
+
+Published under the `Freakazoid78tr` GitHub account with `Volcanic` as the profile author/brand. The profile is intended as a public-service contribution to Hermes profile safety, not as a private Volcanic operating profile.
+
 ## What is included
 
 - `SOUL.md` — profile-auditor persona and safety rules.

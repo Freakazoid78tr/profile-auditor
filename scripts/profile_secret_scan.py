@@ -40,7 +40,7 @@ for p in root.rglob('*'):
         for pat in secret_patterns:
             if pat.search(text):
                 # Allow empty placeholder lines in env examples.
-                if p.name.lower() in {'.env.example', '.env.example', '.env_example', '.env-example', '.env.example'}:
+                if p.name.lower() in {'.env.example', '.env_example', '.env-example'}:
                     continue
                 problems.append(f'possible secret pattern in: {rel}')
                 break
