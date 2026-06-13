@@ -1,0 +1,42 @@
+# Secrets and local runtime state
+.env
+.env.*
+!.env.EXAMPLE
+!.env.example
+auth.json
+state.db
+state.db-*
+*.sqlite
+*.sqlite3
+*.db
+
+# Hermes private/runtime state
+memories/
+sessions/
+logs/
+workspace/
+cache/
+image_cache/
+audio_cache/
+browser_screenshots/
+checkpoints/
+sandboxes/
+
+# Keys/wallets/private material
+*.key
+*.pem
+*.p12
+*.pfx
+*secret*
+*wallet*
+*identity*.json
+*private*
+mnemonic*
+seed*
+
+# Build/editor noise
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+.idea/

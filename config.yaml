@@ -1,0 +1,30 @@
+model:
+  provider: openrouter
+  default: anthropic/claude-sonnet-4
+
+toolsets:
+  - web
+  - terminal
+  - file
+  - code_execution
+  - skills
+
+agent:
+  max_turns: 60
+  tool_use_enforcement: auto
+  reasoning_effort: medium
+
+terminal:
+  backend: local
+  cwd: .
+  timeout: 180
+
+compression:
+  enabled: true
+  threshold: 0.85
+  target_ratio: 0.2
+
+web:
+  backend: ""
+  search_backend: ""
+  extract_backend: ""

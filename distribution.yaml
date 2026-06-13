@@ -1,0 +1,21 @@
+name: volcanic-profile-auditor
+version: 1.0.0
+description: "Public-safe Hermes profile for read-only auditing of Hermes profile repositories before install."
+hermes_requires: ">=0.15.1"
+author: "Volcanic"
+license: "MIT"
+env_requires:
+  - name: OPENROUTER_API_KEY
+    description: "OpenRouter API key for the default model provider. You may switch providers in config.yaml."
+    required: false
+    default: ""
+distribution_owned:
+  - SOUL.md
+  - config.yaml
+  - distribution.yaml
+  - README.md
+  - .env.EXAMPLE
+  - skills/
+  - scripts/
+  - templates/
+  - cron/

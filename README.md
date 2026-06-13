@@ -1,0 +1,83 @@
+# Volcanic Profile Auditor
+
+A public-safe Hermes profile for read-only inspection of Hermes profile repositories before installation.
+
+It helps users and agents answer:
+
+- What does this profile do?
+- What files, skills, scripts, cron jobs, and MCP servers are included?
+- What model/provider/toolsets does it request?
+- Does it appear to contain secrets, private state, sessions, memories, logs, wallets, or risky automation?
+- Should it be installed, inspected more deeply, or avoided?
+
+## Install
+
+```bash
+hermes profile install github.com/Freakazoid78tr/volcanic-profile-auditor --name volcanic-profile-auditor --alias
+```
+
+Then copy the generated env example and add your model provider key if needed:
+
+```bash
+cp ~/.hermes/profiles/volcanic-profile-auditor/.env.EXAMPLE ~/.hermes/profiles/volcanic-profile-auditor/.env
+$EDITOR ~/.hermes/profiles/volcanic-profile-auditor/.env
+```
+
+Run it:
+
+```bash
+volcanic-profile-auditor chat
+# or
+hermes -p volcanic-profile-auditor chat -q "Audit https://github.com/deeploaf/hermes-research-agent"
+```
+
+## What is included
+
+- `SOUL.md` — profile-auditor persona and safety rules.
+- `config.yaml` — safe, narrow Hermes toolsets for repo inspection.
+- `distribution.yaml` — install metadata and env requirements.
+- `skills/profile-auditing/profile-repo-inspection/SKILL.md` — read-only inspection workflow.
+- `skills/profile-auditing/secret-state-scan/SKILL.md` — secret/private-state scanning workflow.
+- `templates/profile_audit_report.md` — standard report template.
+- `scripts/profile_secret_scan.py` — local scanner for public profile distributions.
+- `.env.EXAMPLE` — key names only, no secrets.
+
+No cron jobs are enabled by default. No MCP servers are configured by default.
+
+## Security and privacy notes
+
+This repository is intended to be safe to publish. It must not contain:
+
+- `.env` files or API keys
+- `auth.json` or OAuth tokens
+- `memories/`
+- `sessions/`
+- `logs/`
+- `state.db*` or other SQLite runtime state
+- wallets, keystores, identities, mnemonics, seeds, private keys
+- browser screenshots, local caches, or workspaces
+
+Before publishing updates, run:
+
+```bash
+python3 scripts/profile_secret_scan.py .
+git status --short
+```
+
+## Output shape
+
+The auditor produces a concise report:
+
+1. Short verdict
+2. What it is
+3. What is inside
+4. Capabilities
+5. Toolsets and model defaults
+6. Skills/scripts/cron/MCP review
+7. Secret/private-state scan
+8. Safety concerns
+9. Recommended install command
+
+## License
+
+MIT
