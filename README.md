@@ -1,4 +1,4 @@
-# Volcanic Profile Auditor
+# Profile Auditor
 
 A public-safe Hermes profile for read-only inspection of Hermes profile repositories before installation.
 
@@ -13,22 +13,22 @@ It helps users and agents answer:
 ## Install
 
 ```bash
-hermes profile install github.com/Freakazoid78tr/volcanic-profile-auditor --name volcanic-profile-auditor --alias
+hermes profile install github.com/Freakazoid78tr/profile-auditor --name profile-auditor --alias
 ```
 
 Then copy the generated env example and add your model provider key if needed:
 
 ```bash
-cp ~/.hermes/profiles/volcanic-profile-auditor/.env.EXAMPLE ~/.hermes/profiles/volcanic-profile-auditor/.env
-$EDITOR ~/.hermes/profiles/volcanic-profile-auditor/.env
+cp ~/.hermes/profiles/profile-auditor/.env.EXAMPLE ~/.hermes/profiles/profile-auditor/.env
+$EDITOR ~/.hermes/profiles/profile-auditor/.env
 ```
 
 Run it:
 
 ```bash
-volcanic-profile-auditor chat
+profile-auditor chat
 # or
-hermes -p volcanic-profile-auditor chat -q "Audit https://github.com/deeploaf/hermes-research-agent"
+hermes -p profile-auditor chat -q "Audit https://github.com/deeploaf/hermes-research-agent"
 ```
 
 ## Example tasks
