@@ -13,7 +13,7 @@ It helps users and agents answer:
 ## Install
 
 ```bash
-hermes profile install github.com/Freakazoid78tr/profile-auditor --name profile-auditor --alias
+hermes profile install github.com/VolcanicWorks/profile-auditor --name profile-auditor --alias
 ```
 
 Then copy the generated env example and add your model provider key if needed:
@@ -44,7 +44,7 @@ This profile requests only the toolsets needed for read-only repository inspecti
 
 ## Branding/provenance
 
-Published under the `Freakazoid78tr` GitHub account with `Volcanic` as the profile author/brand. The profile is intended as a public-service contribution to Hermes profile safety, not as a private Volcanic operating profile.
+Published under the `VolcanicWorks` GitHub account with `Volcanic` as the profile author/brand. The profile is intended as a public-service contribution to Hermes profile safety, not as a private Volcanic operating profile.
 
 ## What is included
 
